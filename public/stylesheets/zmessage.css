@@ -1,0 +1,41 @@
+.mes{
+    margin-top: 20px;
+}
+.mes h1{
+    font-size: 18px;
+    color: black;
+}
+.mes .noread{
+    text-align: center;
+    padding-bottom: 40px;
+}
+.fontactive{
+    border-bottom: 2px solid steelblue;
+    font-weight: bold;
+}
+.read{
+   float: left;
+    padding-bottom: 40px;
+}
+.read li{
+    float: left;
+    width: 100%;
+   line-height: 35px;
+}
+.read li:hover {
+    border-bottom:none;
+}
+.read li a{
+    color: #00b3ee;
+}
+.left li :hover{
+    border-bottom: none;
+}
+.left li:hover a{
+    background-color: white;
+    color: #00b3ee;
+}
+.read li a:hover{
+    background-color: white;
+    color: blue;
+}

@@ -8,5 +8,21 @@ module.exports = {
     //数据库连接的端口号
     port:27017,
     //数据库的名字
-    db:'ask'
+    db:'ask',
+    //加密的密码
+    psd:'askSystem',
+    mail_opts:{
+        //邮箱的服务器地址
+        service:'163',
+        host:'smtp.163.com',
+        //权限授权码
+        auth:{
+            user:'q1014557543@163.com',
+            pass:'zpd1014557543'
+        }
+    },
+        //cookie 的名字
+    auth_name:'ask_system',
+    //cookie 的加密key值
+    cookie_secret:'ask'
 }

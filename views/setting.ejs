@@ -1,0 +1,117 @@
+
+<body ng-app="settingApp" ng-controller="settingController">
+<div class="main">
+    <!--//导航-->
+
+    <!--//主体-->
+     <div class="container">
+         <div class="cont">
+             <ul class="user-h2">
+                 <h2>
+                     <i class="fa fa-cog"></i>&nbsp;用户设置
+                 </h2>
+             </ul>
+             <form id="<%=user._id%>" name="settingForm" ng-submit="postForm()">
+                 <div class="setting-all">
+                     <div class="setting-head">
+                         <h3>基本信息</h3>
+                     </div>
+                     <div class="setting-body">
+                             <dl>
+                                  <dt>账号:</dt>
+                                  <dd><%= user.name%></dd>
+                              </dl>
+                               <dl>
+                                     <dt>邮箱:</dt>
+                                     <dd><%= user.email%></dd>
+                                 </dl>
+                         <dl>
+                                     <dt>个性签名:</dt>
+                                     <dd><input  ng-model="formData.motto" name="motto" value="<%=user.motto%>" ng-maxlength="20" required>
+                                         <div>
+                                             <label for="" ng-show="settingForm.motto.$invalid && !settingForm.motto.$pristine"  ng-cloak>
+                                                 <i class="fa fa-close"></i> 请正确填写签名内容
+                                             </label>
+                                         </div>
+                                     </dd>
+                                 </dl>
+                         <div class="sub-bt">
+                             <input type="submit" value="提交">
+                         </div>
+                     </div>
+                     <div class="setting-touxiang hidden-xs">
+                       <!--  <dl>
+                             <dt class="pull-left">
+                                 <img  id="preview"  style="width:100px;height: auto" class="aw-border-radius-5" src="<%= user.avatar %>">
+                             </dt>
+                             <dd class="pull-left">
+                                 <h4>头像设置</h4>
+                                 <p>支持jpg、gif、png等格式的图片(其他的图片格式不支持)</p>
+                                 <label class="btn btn-mini btn-success" for="xFile">上传图片</label>
+                                 <input type="file" id="xFile" style="position:absolute;clip:rect(0 0 0 0);" name="file" onchange="imgPreview(this)">
+
+                             </dd>
+                         </dl>-->
+
+                         <div class="side-bar">
+                             <dl>
+                                 <dt class="pull-left text-center">
+                                     <div class="kv-avatar">
+                                         <div class="file-loading">
+                                             <input id="avatar" name="avatar" type="file" target="<%= user.avatar%>" required>
+                                         </div>
+                                     </div>
+                                 </dt>
+                                 <dd style="width:200px;" class="pull-left text-center">
+                                     <h5>头像设置</h5>
+                                     <p>支持jpg、gif、png等格式的图片(其他的图片格式不支持)</p>
+                                 </dd>
+                             </dl>
+                         </div>
+                     </div>
+
+                 </div>
+             </form>
+         </div>
+     </div>
+    <!--//页脚-->
+
+</div>
+</body>
+</html>
+<script src="/plugins/jquery/dist/zichuang.js"></script>
+<!--
+<script type="text/javascript">
+    function imgPreview(fileDom){
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+        reader.onload = function(e) {
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+</script>-->
+<link rel="stylesheet" href="/plugins/fileinput/css/fileinput.min.css">
+<script src="/plugins/fileinput/js/fileinput.min.js"></script>
+<script src="/plugins/fileinput/js/locales/zh.js"></script>
+<script>
+
+
+</script>

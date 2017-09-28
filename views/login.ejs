@@ -1,20 +1,57 @@
-<!DOCTYPE>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title><%= title %></title>
-    <!--加载boostrap前端UI框架-->
-    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css">
-    <!--加载图标库-->
-    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
-    <!--加载首页的css样式-->
-    <link rel="stylesheet" href="/stylesheets/login.css">
-    <!--加载jquery-->
-    <script src="/plugins/jquery/dist/jquery.js"></script>
-    <!--加载angularJS-->
-    <script src="/plugins/angular/angular.js"></script>
-</head>
-<body>
 
+<body>
+<div class="main" ng-app="loginApp" ng-controller="loginController">
+    <!--//导航-->
+
+    <!--//主体-->
+    <div class="login-cont">
+        <div class="login-left col-lg-7 col-md-7 col-sm-7 col-xs-7">
+        <div>
+            <img src="../images/bootstrap-logo.png" alt="logo">
+        </div>
+        <h2>基于nodeJS的社区系统</h2>
+            <form name="loginForm" method="post" ng-submit="postForm()">
+                <section class="te">
+                    <input type="text" placeholder="邮箱/用户名" name="name" ng-model="formData.name" ng-pattern="/(^[a-zA-Z][a-zA-Z0-9_]{4,11}$)|(^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$)/" required>
+                    <span ng-cloak ng-show="loginForm.name.$invalid && !loginForm.name.$pristine" class="text-danger"> 邮箱/用户名不合法</span>
+                    <span ng-cloak ng-show="loginForm.name.$invalid && loginForm.name.$dirty">
+                        <i class="fa fa-check-circle"></i>
+                    </span>
+                </section>
+                <section class="te">
+                    <input type="text" placeholder="密码" name="password" ng-model="formData.password"
+                                           ng-pattern="/(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{5,}/" ng-maxlength="12"   required>
+                    <span  ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" ng-cloak class="text-danger">
+                        <i class="aw-icon i-err"></i>
+                            密码格式不正确
+                    </span>
+                </section>
+                <section class="clear">
+                    <input type="checkbox" name="vehicle" value="" checked="checked" required> 记住我 <a href="">忘记密码</a>
+                    <input type="submit" value="登录" class="sub" ng-disabled="loginForm.$invalid">
+                </section>
+            </form>
+        </div>
+        <div class="login-right center col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <h2>第三方账号登录</h2>
+            <div><a href=""><img src="../images/weibo-login.png" alt="logo"></a></div>
+            <div><a href=""><img src="../images/qq-login.png" alt="logo"></a></div>
+        </div>
+        <div  class="what">
+            <div id="errorbox" ng-show="error" class="alert text-center alert-danger" ng-cloak="">
+                {{error}}
+            </div>
+        </div>
+        <div class="login-bottom">
+                <span>还没有账号?</span>&nbsp;
+             <a href="/register">立即注册</a>&nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="">游客访问</a>&nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="#">问答阅读</a>
+        </div>
+    </div>
+
+
+    <!--//页脚-->
+
+</div>
 </body>
-</html>

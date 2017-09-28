@@ -1,0 +1,68 @@
+.user-h2{
+    color: black;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 1px solid silver;
+}
+.user-h2 h2{
+    line-height: 40px;
+}
+.setting-all{
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+.setting-head{
+    padding-left: 40px;
+    color: black;
+    font-size: 16px;
+}
+.setting-head h3{
+    line-height: 40px;
+}
+.setting-body dl{
+    padding-left: 60px;
+    color: grey;
+}
+.setting-body dl dt{
+    float: left;
+    padding-right: 15px;
+    text-align: right;
+    width: 80px;
+}
+
+.sub-bt input{
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    background-color: #5bbf5a;
+    border: none;
+    margin: 20px 40px 200px 40px;
+}
+.sub-bt input:hover{
+    background-color: green;
+}
+.setting-touxiang{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+}
+.setting-touxiang dt{
+    padding-right: 15px;
+}
+.setting-touxiang dd h4{
+    line-height: 20px;
+}
+.setting-touxiang dd p{
+    width: 220px;
+    line-height: 35px;
+}
+.shezhi{
+    width: 70px;
+    height: 30px;
+}
+

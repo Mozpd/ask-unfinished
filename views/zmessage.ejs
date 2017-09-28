@@ -1,0 +1,59 @@
+
+<body>
+<div class="main">
+    <!--//导航-->
+    <!--//主体-->
+    <div class="container">
+    <div class=" cont clear">
+
+        <div class="left col-sm-12 col-md-9">
+            <ul class="hidden-xs nav  clear faxian tab-menu">
+                <strong><h2 class="hidden-xs"><i class="fa fa-bell-o"></i> 消息</h2></strong>
+                <li class="aaaa"><a href="#read">已读消息</a></li>
+                <li class="fontactive bbbb"><a href="#noread">未读消息</a></li>
+            </ul>
+            <div class="tab-down">
+                <section class="mes1 mes">
+                    <strong><h1>未读消息</h1></strong>
+                    <div class="noread" id="noread">没有未读消息</div>
+                </section>
+                <section class="mes2 hides mes">
+                    <strong><h1>已读消息</h1></strong>
+                    <div class="read" id="read">
+                        <ul>
+                            <li><a href="">qqqq</a>  回复了你的问题 <a href="">我是一个标题</a> </li>
+                            <li><a href="">qqqq</a>  回复了你的问题 <a href="">我是一个标题</a> </li>
+                            <li><a href="">qqqq</a>  回复了你的问题 <a href="">我是一个标题</a> </li>
+                        </ul>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--//页脚-->
+</div>
+</body>
+
+<script>
+    $(function () {
+        /*$('.tab-menu li').click(function () {
+            $('.tab-down section').eq($(this).index()).css('display','block').siblings().css('display','none')
+            console.log(2)
+        })*/
+        $('.aaaa').click(function () {
+            $('.mes2').removeClass('hides');
+            $('.mes1').addClass('hides');
+            $('.aaaa').addClass('fontactive')
+            $('.bbbb').removeClass('fontactive')
+        })
+        $('.bbbb').click(function () {
+            $('.mes1').removeClass('hides');
+            $('.mes2').addClass('hides');
+            $('.bbbb').addClass('fontactive')
+            $('.aaaa').removeClass('fontactive')
+        })
+    })
+</script>
+<script src="/plugins/jquery/dist/zichuang.js"></script>

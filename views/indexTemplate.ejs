@@ -1,0 +1,131 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <!--加载boostrap前端UI框架-->
+    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css">
+    <!--加载首页的css样式-->
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <!--动态加载css-->
+    <link rel="stylesheet" href="<%= locals.resource %>" />
+    <!--加载图标库-->
+    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
+    <!--加载jquery-->
+    <script src="/plugins/jquery/dist/jquery.js"></script>
+    <!--引入angularJS-->
+    <script  src="/plugins/angular/angular.min.js"></script>
+    <!--控制器文件-->
+    <script  src="/javascripts/controller.js"></script>
+    <!--编辑器-->
+    <link rel="stylesheet" href="/plugins/editor/dist/simplemde.min.css">
+    <script type="text/javascript" src="/plugins/editor/dist/simplemde.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <!--//导航-->
+    <nav>
+        <div class="container clear">
+            <!--logo-->
+            <div class="logo hidden-xs">
+                <a href="http://localhost:3000">
+                    <img src="../images/logo.png" alt="logo">
+                </a>
+            </div>
+            <!--logo-->
+            <!--导航-->
+            <div class="top-nav navbar">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <nav role="navigation" class="collapse navbar-collapse " id="example">
+                    <ul class="nav navbar-nav aaa">
+                        <li><a href="/" class="active"><i class="fa fa-id-card"></i> 发现</a></li>
+                        <% if (user){%>
+                        <li><a href="/zmessage" class="tongzhi"><i class="fa fa-bell-o"></i> 通知</a></li>
+                        <%}%>
+                    </ul>
+                </nav>
+            </div>
+            <div class="user-nav ">
+                <% if (user){%>
+                <span class="position" id="fabu">
+                    <a href="/create-question" class="publish-btn btn-primary hidden-xs">
+                        <i class="fa fa-book fq">发起</i>
+                        </a>
+                    <a href="" class="user-nav-dropdown " id="ishow">
+                        <img src="<%=user.avatar%>">
+                    </a>
+              </span>
+                <div class="dropdown dropdown-list pull-right " id="ihide">
+                    <ul class="dropdown-list">
+                        <li class="hidden-xs">
+                            <a href="/setting">
+                                <i class="fa fa-cogs"></i>
+                                设置
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logout" id="tuichu">
+                                <i class="fa fa-sign-out"></i>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <% }else {%>
+                <span class=" " id="dengluzhuce">
+                    <a class="login btn btn-normal btn-primary" href="/login">登录</a>
+                    <a class="register btn btn-normal btn-success" href="/register">注册</a>
+                </span>
+                <%}%>
+
+            </div>
+
+        </div>
+    </nav>
+    <!--//主体-->
+  <%- body%>
+    <!--//页脚-->
+    <div class="footer ">
+        <section class="container">
+            <div class="foo-left col-md-6 col-xs-12">
+                <div class="image">
+                    <img src="../images/zhiyou.png" alt="logo">
+                </div>
+                <p>本网站所有的解释权归智游教育集团,由教学部nodeJS组成员整理,不允许任何人以任何目的进行传播和商业运作</p>
+            </div>
+
+            <div class="foo-right clear  col-md-6 col-xs-12">
+                <ul>
+                    <h3>旗下网站</h3>
+                    <li><a href="">智游集团</a></li>
+                    <li><a href="">我的博客</a></li>
+                </ul>
+                <ul>
+                    <h3>联系方式</h3>
+                    <li><a href="">联系QQ</a></li>
+                    <li><a href="">电子邮件</a></li>
+                </ul>
+                <ul>
+                    <h3>关于</h3>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">广告合作</a></li>
+                    <li><a href="">友情链接</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="center">本网站的所有权归智游集团教学部nodeJS组成员李志远所有</div>
+
+</div>
+</body>
+</html>
+
+<script src="/plugins/jquery/dist/zichuang.js"></script>

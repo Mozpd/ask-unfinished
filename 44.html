@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="public/plugins/bootstrap/dist/css/bootstrap.css">
+    <script src="/public/plugins/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="public/plugins/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../fileinput/css/fileinput.css">
+    <script src="../fileinput/js/fileinput.js"></script>
+    <script src="../fileinput/js/locales/zh.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>fileinput-example</h1>
+            <form method="POST" action="#">
+                <div class="form-group">
+                    <label for="myfile">文件输入</label>
+                    <input type="file" name="file" id='myfile'>
+                </div>
+                <input type="submit" name="submit" value='提交' class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#myfile').fileinput({
+        showUpload: false,
+        previewFileType: 'any',
+        language: 'zh',
+        browseLabel: '图片多选',
+        browseClass: 'btn btn-default',
+        allowedFileTypes: ['image'], // 限制文件类型为图片
+        allowedFileExtensions: ['jpg', 'png'], // 限制文件后缀名为jpg,png,gif
+        maxFileCount: 3,  // 限制最多3张图片
+        maxFileSize: 1024, // 限制图片大小，最大1024KB
+        allowedPreviewTypes: ['image'], // 允许预览的文件类型
+        initialCaption: '可以选择最多3张图片，格式为png或者jpg，大小不超过1M', // 初始化说明框框，比如该项目上默认显示：可以选择最多3张图片，格式为png或者jpg，大小不超过1M
+        layoutTemplates: {
+            main1: '{preview}\n' +
+            '<div class="input-group {class}">\n' +
+            '   <div class="input-group-btn">\n' +
+            '       {browse}\n' +
+            '       {remove}\n' +
+            '   </div>\n' +
+            '   {caption}\n' +
+            '</div>',
+            footer: '<div class="file-thumbnail-footer">\n' +
+            '    <div class="file-caption-name">{caption}{size}</div>\n' +
+            '</div>'
+        }
+    });
+</script>
+</body>
+
+</html>

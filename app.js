@@ -5,8 +5,16 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+//引入expressPartials第三方插件
+const partials= require('express-partials');
+//引入第三方session插件
+const session = require('express-session');
 //引入路由规则的文件
 const routes = require('./routes');
+//引入setting配置文件
+const setting = require('./setting');
+//引入权限文件
+const auth = require('./common/auth');
 const app = express();
 
 // view engine setup
@@ -18,8 +26,23 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(setting.cookie_secret));
+//使用session
+app.use(session({
+    secret:setting.cookie_secret, //是给session加密的.通常应该是session存储的时候进行加密
+    resave:true,
+    saveUninitialized:true
+}));
+//通过cookie去生成session的方法
+app.use(auth.authUser);
+//将session信息保存在本地
+app.use((req,res,next)=>{
+    res.locals.user = req.session.user;
+    next();
+})
 app.use(express.static(path.join(__dirname, 'public')));
+//使用模板的第三方插件
+app.use(partials())
 
 app.use(routes);
 

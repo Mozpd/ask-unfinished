@@ -1,0 +1,71 @@
+.reg-cont{
+    border: 1px solid silver;
+    width: 50%;
+    margin: 50px auto;
+    height: 700px;
+    background: white;
+    padding-top: 40px;
+}
+.reg-cont img{
+    height: 100px;
+    width: 100px;
+}
+.reg-cont h2{
+    padding-top: 70px ;
+    font-size: 18px;
+}
+.reg-cont input{
+    width: 45%;
+    height: 40px;
+    margin-top: 30px;
+    padding-left: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+.blue{
+    width: 45%;
+    height: 40px;
+    margin: 30px auto;
+}
+.blue input{
+    background: #66b7ff;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.last  input{
+    width: 15px !important;
+    height: 15px;
+
+}
+.last{
+    width: 45%;
+    margin: 0px auto;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.a{
+    padding-top: 27px;
+}
+.inputings li{
+    position: relative;
+}
+.inputings li span{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 120px;
+    height: 40px;
+    background: #FFEAEA;
+    color: #CC0000;
+    text-align: left;
+    border: 1px solid #E5C3C4;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.juzhong{
+    text-align: center;
+}

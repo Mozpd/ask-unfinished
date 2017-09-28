@@ -1,20 +1,62 @@
-<!DOCTYPE>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title><%= title %></title>
-    <!--加载boostrap前端UI框架-->
-    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css">
-    <!--加载图标库-->
-    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
-    <!--加载首页的css样式-->
-    <link rel="stylesheet" href="/stylesheets/register.css">
-    <!--加载jquery-->
-    <script src="/plugins/jquery/dist/jquery.js"></script>
-    <!--加载angularJS-->
-    <script src="/plugins/angular/angular.js"></script>
-</head>
-<body>
 
-</body>
-</html>
+
+<div ng-app="registerApp" ng-controller="registerController">
+
+
+    <div class="center reg-cont">
+            <div>
+                <img src="../images/bootstrap-logo.png" alt="logo">
+            </div>
+           <h2>注册新用户</h2>
+        <form  name="regForm" ng-submit="postForm()">
+            <ul class="inputings">
+        <li><input type="text" placeholder="用户名" name="name" ng-model="formData.name"
+            ng-minlength="5" ng-maxlength="12" ng-pattern="/^[a-zA-Z][a-zA-Z0-9_]{4,11}$/" required>
+            <span  ng-show="regForm.name.$invalid && !regForm.name.$pristine" ng-cloak>
+                 <i class="aw-icon i-err"></i>
+                        用户名长度不符合
+            </span>
+        </li>
+
+        <li><input type="text" placeholder="邮箱" name="email" ng-model="formData.email"
+                   ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/" required>
+            <span  ng-show="regForm.email.$invalid && !regForm.email.$pristine" ng-cloak>
+                <i class="aw-icon i-err"></i>
+                        邮箱格式不正确
+            </span>
+        </li>
+
+        <li><input type="text" placeholder="密码" name="password" ng-model="formData.password"
+                   ng-pattern="/(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{5,}/" ng-maxlength="12"   required>
+            <span  ng-show="regForm.password.$invalid && !regForm.password.$pristine" ng-cloak>
+               <i class="aw-icon i-err"></i>
+                        密码格式不正确
+            </span>
+        </li>
+            <li class="last ">
+                <div >
+                    <input type="checkbox" checked="checked"  name="" required>
+                    我同意
+                    <a href="#">用户协议</a>
+                </div>
+                <div class="a">
+                <a href="/login" >已有账号</a>
+                </div>
+            </li>
+        </ul>
+       <div class="blue">
+           <input type="submit" value="zhuce" class="btn btn-block" ng-disabled="regForm.$invalid">
+       </div>
+</form>
+        <div class="modal-footer juzhong" style="height: 40px" ng-cloak>
+            <div ng-show="success" id="successbox" class="alert alert-success" role="alert">
+                {{success}}
+            </div>
+            <div ng-show="error" id="errorbox" class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+        </div>
+    <!--//页脚-->
+</div>
+
+</div>

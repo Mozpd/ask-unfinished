@@ -1,0 +1,299 @@
+
+html {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-size: 14px;
+    line-height: 160%;
+    color: #666;
+    background: url(../images/bg.gif) repeat;
+    box-sizing: border-box;
+
+}
+
+body,input,button,select,textarea,h1,h2,h3,h4,h5,h6 {
+    font-family: 'Helvetica Neue',STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif
+}
+
+ul,ol {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    font-size: 100%;
+    line-height: 1.7
+}
+
+.clear{
+    overflow: auto;
+    zoom: 1;
+}
+
+a {
+    cursor: pointer;
+    color: #155faa;
+    text-decoration: none;
+
+}
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+.logo{
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    float: left;
+}
+.logo img{
+    width: 100%;
+    height: auto;
+}
+nav{
+    background-color:#563d7c;
+    width: 100%;
+    height: 55px;
+    line-height: 50px;
+}
+.top-nav{
+    float: left;
+    padding-left: 15px;
+}
+.user-nav{
+    float: right;
+}
+.active{
+    background-color: #6e4e9e;
+    color: white;
+    font-size: 18px;
+}
+.tongzhi{
+    background-color:#563d7c;
+    color: white;
+    font-size: 18px;
+}
+.aaa li:hover a{
+    background-color: #6e4e9e;
+    color: white;
+    font-size: 18px;
+}
+.login,.register{
+    width: 80px;
+}
+.cont{
+    width: 100%;
+    margin-top: 30px;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.left{
+    border-right: 1px solid gainsboro;
+}
+.left h2{
+    float: left;
+    line-height: 40px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.left li{
+    float: right;
+}
+.left li a{
+    color: grey;
+}
+.left li:hover {
+    border-bottom: 2px solid blue;
+}
+.left li:hover a{
+    background-color: white;
+    color: black;
+}
+.right h2{
+    float: left;
+    font-size: 16px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+.li-active{
+    border-bottom: 2px solid blue;
+}
+.right  span{
+    float: right;
+    line-height: 60px;
+}
+.footer{
+    border-top: 1px solid #e5e5e5;
+    margin-top: 100px;
+    padding-top: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.foo-left p{
+   margin-top: 20px;
+}
+.foo-right ul{
+    float: right;
+    padding-right: 50px;
+}
+.center{
+    text-align: center;
+    margin-top: 30px;
+}
+.faxian{
+    width: 105%;
+    padding-top: 20px;
+    border-bottom: 1px solid gainsboro;
+    margin-left: -29px;
+}
+.faxian h2{
+    padding-left: 10px;
+    color:black;
+}
+.faxian li{
+    padding-top: 5px;
+    margin-right: 15px;
+}
+.user-nav-dropdown{
+    display: inline-block;
+    height: 55px;
+    width: 35px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-radius: 5px;
+}
+.publish-btn{
+    display: inline-block;
+    width: 80px;
+    height: 35px;
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    background-color: #00b3ee;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+.user-nav-dropdown img{
+    width: 100%;
+    height: 65%;
+    border-radius: 5px;
+}
+.position{
+    position: relative;
+}
+.dropdown{
+    width: 120px;
+    position: absolute;
+    top: 55px;
+    right: 16%;
+    background-color: white;
+    border: 1px solid gainsboro;
+    z-index: 999;
+    display: none;
+}
+
+.dropdown-list a{
+    color: black;
+    padding-left: 10px;
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-list li:hover{
+    background: gainsboro;
+}
+/*.user-nav-dropdown:hover .dropdown-list,.dropdown:hover .dropdown-list{
+    display:block;
+}*/
+.cont-item{
+    margin-top: 10px;
+}
+.user-name{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    float: left;
+    margin-top: 10px;
+}
+.user-name img{
+    width: 100%;
+    height: 100%;
+}
+.item-content-left h4{
+    margin-left: 50px;
+}
+.item-content-left h4 span{
+    background-color: #00b3ee;
+    color: white;
+    margin-left: 10px;
+ }
+.item-content-left p{
+    margin-left: 50px;
+    line-height: 10px;
+}
+.smaller{
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+.item-content-left{
+    float: left;
+}
+.item-content-right{
+    float: right;
+}
+.smaller img{
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+}
+.page{
+    width: 30px;
+    height: 30px;
+    background:deepskyblue;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.us{
+ border-bottom: 1px solid silver;
+}
+.ggg{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.ggg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.wa{
+    margin-top: 70px;
+    padding-left: 15px;
+}
+.wa p{
+    line-height: 30px;
+}
+.fq{
+    padding-top: 10px;
+}
+.hides{
+    display: none;
+}
+.tab-down h4 span{
+    font-size: 12px;
+    padding: 0 5px;
+    background-color: #99cfff;
+    color: white;
+}

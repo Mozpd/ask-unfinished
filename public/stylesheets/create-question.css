@@ -1,0 +1,54 @@
+.create-left{
+    border-right: 1px solid #e5e5e5;
+    height: 900px;
+}
+.create-left-head h2{
+    font-size: 18px;
+    margin-top: 15px;
+    color: black;
+    line-height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+.create-left-body{
+    margin-top: 20px;
+    position: relative;
+}
+.create-left-body h3{
+    color: black;
+    line-height: 30px;
+}
+.create-left-body select{
+    width: 50%;
+    height: 35px;
+   margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+}
+.create-err{
+    color: #a94442;
+    margin-bottom: 5px;
+}
+.create-title{
+    width: 80%;
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+}
+.markdown-text{
+    width: 90%;
+    height: 10px;
+}
+.lie{
+    position: absolute;
+    top: 240%;
+    left: 0;
+}
+.anniu{
+    position: absolute;
+    top: 800px;
+    right: 12%;
+}

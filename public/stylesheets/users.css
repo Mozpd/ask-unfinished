@@ -1,0 +1,69 @@
+.center-left{
+    border-right: 1px solid #e5e5e5;
+}
+.users-head{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.users-head h2{
+    color: black;
+    font-size: 18px;
+}
+.users-content{
+    padding-left: 5px;
+}
+.users-content .users-body{
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.users-content .orange{
+    color: orange;
+   font-size: 30px;
+    margin-right: 15px;
+}
+.toux a img{
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.meta span{
+margin-right: 10px;
+    line-height: 5px;
+}
+.users-body p{
+    line-height: 30px;
+    color: grey;
+}
+.guan{
+    position: absolute;
+    top: 25%;
+    right: 1%;
+}
+.guan em{
+    color: silver;
+}
+.users-page{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.users-page ul{
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+.users-page ul li{
+   float: left;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    padding: 6px 10px;
+    border-right: 1px solid #e5e5e5;
+}
+.users-page-active{
+    background-color:#499ef3 !important;
+}
+.athover:hover{
+    background: floralwhite;
+}
