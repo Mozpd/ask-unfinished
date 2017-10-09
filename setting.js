@@ -24,5 +24,10 @@ module.exports = {
         //cookie 的名字
     auth_name:'ask_system',
     //cookie 的加密key值
-    cookie_secret:'ask'
+    cookie_secret:'ask',
+    categorys:[
+        ['ask','问答'],
+        ['share','分享'],
+        ['job','招聘']
+    ]
 }

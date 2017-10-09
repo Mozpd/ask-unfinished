@@ -1,5 +1,6 @@
 const  setting = require('../setting');
 const  User    = require('../model/User');
+const Message = require('../model/Message');
 const  auth = {
     gen_session:(user,res)=>{
         let auth_user  = `${user._id}$$$$`;
@@ -13,7 +14,12 @@ const  auth = {
     authUser:(req,res,next)=>{
         //中间件，所有的请求都要经过它 我们在这来判断用户的登录情况
         if (req.session.user){
-            next();//用户已经登录情况下 直接下一步
+            //添加用户的信息数量
+            Message.getMessagesCount(req.session.user._id,(err,count)=>{
+                req.session.msg_count = count;
+                next();//用户已经登录情况下 直接下一步
+            })
+
         }else {
             //需要通过cookie去生成session
             //1,获取cookie
@@ -33,9 +39,14 @@ const  auth = {
                         next();
                     }else {
                         //3，结束
-                        req.session.user = user;
-                        /*console.log(req.session.user)*/
-                        next()
+                        //查询出用户的信息数量
+                        Message.getMessagesCount(user_id,(err,count)=>{
+                            req.session.msg_count = count;
+                            req.session.user = user;
+                            /*console.log(req.session.user)*/
+                            next()
+                        })
+
                     }
                 })
             }

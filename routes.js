@@ -27,18 +27,16 @@ router.post('/register',auth.userNotRequired,home.postRegister);
 router.post('/login',auth.userNotRequired,home.postLogin);
 //退出行为
 router.get('/logout',home.logout);
-//通知的页面的路由
-router.get('/zmessage',auth.userRequired,home.zmessage);
-router.get('/zmessage',auth.userRequired,home.postMessage);
+
 //个人设置页面的路由
 /*router.get('/setting',auth.userRequired,home.setting);*/
 //用户中心页面路由
 router.get('/user-center',auth.userRequired,home.center)
 //发起文章的页面路由
-router.get('/create-question',auth.userRequired,home.createQuestion);
+/*router.get('/create-question',auth.userRequired,home.createQuestion);*/
 //**************************************问题***********************************
 //发布问题的页面
-router.get('/question/create',auth.userRequired,question.create);
+router.get('/create-question',auth.userRequired,question.create);
 //发布问题的行为
 router.post('/question/create',auth.userRequired,question.postCreate);
 //编辑问题的页面
@@ -48,7 +46,8 @@ router.post('/question/:id/edit',auth.userRequired,question.postEdit);
 //删除问题的行为
 router.get('/question/:id/delete',auth.userRequired,question.delete);
 //问题页面
-router.get('/question',question.index);
+router.get('/question/:id',question.index);
+
 router.get('/edit',auth.userRequired,question.edits);
 
 //****************************************用户**********************************
@@ -68,8 +67,11 @@ router.get('/user/:name/questions',user.questions);
 router.get('/user/:name/replys',user.replys);
 
 //**************************************消息*************************************
+//通知的页面的路由
+/*router.get('/zmessage',auth.userRequired,home.zmessage);*/
+/*router.get('/zmessage',auth.userRequired,home.postMessage);*/
 //消息列表页面
-router.get('/my/messages',message.index);
+router.get('/my/messages',auth.userRequired,message.index);
 //确认已读行为
 router.get('/updateMessage/:id',message.updateMessage);
 //确认全部已读行为

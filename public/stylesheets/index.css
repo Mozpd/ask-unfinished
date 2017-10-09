@@ -297,3 +297,23 @@ nav{
     background-color: #99cfff;
     color: white;
 }
+.badge-post{
+    position: relative;
+}
+.badge-important{
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    border-radius: 50%;
+    background: red;
+    padding: 5px;
+}
+.common-list{
+    width: 100%;
+    margin-top: 10px;
+    line-height: 40px;
+}
+.allread-btn{
+    float: left;
+    width: 100%;
+}

@@ -39,13 +39,13 @@ exports.login = (req,res,next)=>{
         resource:mapping.login,
     })
 }
-exports .zmessage=(req,res,next)=>{
+/*exports .zmessage=(req,res,next)=>{
     res.render('zmessage',{
         title:'消息页面',
         layout:'indexTemplate',
         resource:mapping.message,
     })
-};
+};*/
 
 exports.center=(req,res,next)=>{
     res.render('user-center',{
@@ -54,13 +54,13 @@ exports.center=(req,res,next)=>{
         resource:mapping.userCenter,
     })
 };
-exports.createQuestion=(req,res,next)=>{
-    res.render('create-question',{
+/*exports.createQuestion=(req,res,next)=>{
+   /!* res.render('create-question',{
         title:'发布文章页面',
         layout:'indexTemplate',
         resource:mapping.create,
-    })
-}
+    })*!/
+}*/
 //注册行为的处理函数
 exports.postRegister = (req,res,next)=>{
     let name = req.body.name;

@@ -1,5 +1,5 @@
 
-<body>
+<body ng-app="createApp" ng-controller="createController">
 <div class="main">
     <!--//导航-->
 
@@ -13,50 +13,62 @@
                         发起
                     </h2>
                 </div>
+                <form  name="createForm" ng-submit="postForm()">
                 <div class="create-left-body">
                     <h3>问题的分类</h3>
-                    <select name="" id="">
-                        <option value="">请选择</option>
-                        <option value="">分享</option>
+                    <select name="category" id="" ng-model="formData.category" required>
+                        <%categorys.forEach(function (category,index) { %>
+                        <option value="<%= category[0]%>"><%= category[1]%></option>
+                        <%})%>
+                        <!--<option value="">请选择</option>
                         <option value="">问答</option>
-                        <option value="">招聘</option>
+                        <option value="">分享</option>
+                        <option value="">招聘</option>-->
                     </select>
-                    <div class="create-err">
+                  <!--  <div class="create-err">
                         <i class="glyphicon glyphicon-info-sign"></i>请正确选择版块
-                    </div>
+                    </div>-->
                     <h3>问题的标题</h3>
-                    <input type="text" value="问题标题.." class="create-title">
+                    <input type="text" placeholder="问题标题.." class="create-title" name="title" ng-model="formData.title" ng-minlength="8" ng-maxlength="20" required>
                     <div class="create-err">
-                        <div class="hide">你的问题可能已经有了答案</div>
-                        <span>
-                            <i class="glyphicon glyphicon-info-sign"></i>问题的长度不能小于10个字符或者大于50个字符
-                        </span>
-                    </div>
+                        <div>
+                            <span ng-cloak ng-show="createForm.title.$invalid && !createForm.title.$pristine" class="">
+                                <i class="glyphicon glyphicon-info-sign"></i>问题的长度不能小于8个字符或者大于20个字符
+                            </span>
+                        </div>
                     <h3>问题补充：</h3>
                     <div class="markdown-text">
-                        <textarea name="" id="" cols="" rows=""placeholder="问题支持markdown格式,请注意标记代码"></textarea>
+                        <textarea name=""  id="question" placeholder="问题支持markdown格式,请注意标记代码"></textarea>
                     </div>
                     <div class="create-err lie">
-                        <span>
+                        <span ng-show="!isLegal">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                                               内容不能为空
+                            输入的内容必须大于10个字符
                         </span>
                     </div>
                 </div>
                 <div class="create-left=footer">
-                    <input type="submit" value="发布问题" class="btn btn-large btn-success anniu">
+                    <input type="submit" value="发布问题" class="btn btn-large btn-success anniu" ng-disabled="createForm.$invalid || !isLegal">
+                    <div id="errorbox" class="alert alert-danger ding" ng-show="error">
+                        {{error}}
+                    </div>
                 </div>
+
+                </div>
+                </form>
             </div>
+
             <div class="center-right col-sm-12 col-md-3 ">
 
                 </div>
             </div>
         </div>
+
     </div>
         <!--//页脚-->
 </body>
 <script>
-    const simplemde = new SimpleMDE();
+
 
 </script>
 <script src="/plugins/jquery/dist/zichuang.js"></script>

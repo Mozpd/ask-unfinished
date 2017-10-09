@@ -47,7 +47,14 @@
                     <ul class="nav navbar-nav aaa">
                         <li><a href="/" class="active"><i class="fa fa-id-card"></i> 发现</a></li>
                         <% if (user){%>
-                        <li><a href="/zmessage" class="tongzhi"><i class="fa fa-bell-o"></i> 通知</a></li>
+                        <li class="badge-post">
+                            <a href="/my/messages" class="tongzhi"><i class="fa fa-bell-o"></i> 通知</a>
+                            <% if (msg_count){%>
+                            <span class="badge badge-important">
+                                <%= msg_count %>
+                            </span>
+                            <%}%>
+                        </li>
                         <%}%>
                     </ul>
                 </nav>
