@@ -76,6 +76,7 @@ router.get('/my/messages',auth.userRequired,message.index);
 router.get('/updateMessage/:id',message.updateMessage);
 //确认全部已读行为
 router.get('/updateAllMessage',message.updateAllMessage);
-
+//显示已读消息的分页
+router.post('/showMessagesPage/:page',message.showMessagesPage);
 module.exports = router;
 

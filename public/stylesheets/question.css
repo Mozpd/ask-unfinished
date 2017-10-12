@@ -1,6 +1,5 @@
 .center-left{
     border-right: 1px solid #e5e5e5;
-    height: 1000px;
     position: relative;
 }
 .question-head{
@@ -38,8 +37,9 @@ h4 span a{
 }
 .question-body p{
     padding-top: 20px;
-    line-height: 40px;
+    line-height: 20px;
     padding-left: 10px;
+    max-height: 100px;
 }
 .question-body span{
     padding-right: 15px;
@@ -136,13 +136,12 @@ h4 span a{
 .markdown{
     padding-top: 20px;
     width: 98%;
-    height: 50px;
     position: absolute;
     top: 20px;
 }
 .anniu{
     position: absolute;
-    top: 930px;
+    top: 250px;
     right: 5%;
 }
 .right-one{
@@ -161,4 +160,7 @@ h4 span a{
 }
 .right-three{
     padding: 10px;
+}
+.xianzhi{
+
 }

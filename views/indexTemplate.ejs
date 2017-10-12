@@ -3,20 +3,30 @@
 <head>
     <meta charset="utf-8">
     <title><%= title %></title>
-    <!--加载boostrap前端UI框架-->
-    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css">
-    <!--加载首页的css样式-->
-    <link rel="stylesheet" href="/stylesheets/index.css">
-    <!--动态加载css-->
+    <!--首先引入bootstrap-->
+    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <!--图标-->
+    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
+    <!--再引入我自己的CSS样式-->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/index1.css">
+    <link rel="stylesheet" href="/stylesheets/index2.css">
+    <!--动态的引入某个页面的静态资源-->
     <link rel="stylesheet" href="<%= locals.resource %>" />
-    <!--加载图标库-->
-    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
-    <!--加载jquery-->
-    <script src="/plugins/jquery/dist/jquery.js"></script>
+    <!--引入jquery-->
+    <script type="text/javascript" src="/plugins/jquery/dist/jquery.min.js"></script>
+    <!--引入bootstrap插件-->
+    <script type="text/javascript" src="/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--引入angularJS-->
-    <script  src="/plugins/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/plugins/angular/angular.min.js"></script>
+    <!--首页的JS文件-->
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+    <!--公共的JS文件-->
+    <script type="text/javascript" src="/javascripts/public.js"></script>
+    <!--angularJS核心启动文件-->
+    <script type="text/javascript" src="/javascripts/app.js"></script>
     <!--控制器文件-->
-    <script  src="/javascripts/controller.js"></script>
+    <script type="text/javascript" src="/javascripts/controller.js"></script>
     <!--编辑器-->
     <link rel="stylesheet" href="/plugins/editor/dist/simplemde.min.css">
     <script type="text/javascript" src="/plugins/editor/dist/simplemde.min.js"></script>

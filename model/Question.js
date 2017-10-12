@@ -4,7 +4,10 @@
 //问题表
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const _ = require('lodash');
+const setting = require('../setting');
 const shortid = require('shortid');
+const BaseModel = require('./base_model');
 const QuestionSchema = new Schema({
     _id:{
         type:String,
@@ -71,6 +74,33 @@ const QuestionSchema = new Schema({
         type:Boolean,
         default:false
     }
-})
+});
+    //创建一个虚拟的字段
+ QuestionSchema.virtual('categoryName').get(function () {
+     let category = this.category;
+     let pair = _.find(setting.categorys,function (item) {
+         return item[0] == category;
+     })
+     if (pair){
+         return pair[1]
+     }else {
+         return '';
+     }
+ })
+
+    QuestionSchema.statics = {
+    //获取一个问题的相关信息
+       getFullQuestion:(id,callback)=>{
+        //
+        Question.findOne({"_id":id,'deleted':false}).populate('author')
+           .populate('last_reply_author').exec(callback)
+    },
+        //获取作者的其他文章列表
+        getOtherQuestions:(author,question_id,callback)=>{
+           Question.find({'author':author,'_id':{$nin:[question_id]}}).limit(5).sort({'last_reply_time':-1,'create_time':-1}).exec(callback)
+        }
+}
+
+QuestionSchema.plugin(BaseModel)
 const Question = mongoose.model('Question',QuestionSchema);
 module.exports = Question

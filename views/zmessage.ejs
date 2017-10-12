@@ -1,17 +1,16 @@
 
-<body>
-<div class="main">
+<body ng-app="messageApp" ng-controller="messageController">
     <!--//导航-->
     <!--//主体-->
     <div class="container">
     <div class=" cont clear">
-
         <div class="left col-sm-12 col-md-9">
             <ul class="hidden-xs nav  clear faxian tab-menu">
                     <li class="aaaa"><a href="#read">已读消息</a></li>
                     <li class="fontactive bbbb"><a href="#noread">未读消息</a></li>
                 <strong><h2 class="hidden-xs"><i class="fa fa-bell-o"></i> 消息</h2></strong>
             </ul>
+
             <div class="tab-down">
                 <section class="mes2 hides mes">
                     <div class="read" id="read">
@@ -22,24 +21,24 @@
                             <% include public/at %>
                             <% } %>
                             <% }) %>
+                            <% include public/message-page %>
                             <% }else{ %>
                             <br>
                             <p>没有已读消息...</p>
                             <%}%>
                         </div>
-
                     </div>
                 </section>
-                <section class="mes1 mes">
+                <section class="mes1 mes ">
                     <div class="noread" id="noread">
                         <%if(no_read && no_read.length > 0){%>
                         <div class="allread-btn">
-                            <button class="btn btn-success pull-left">
+                            <button class="btn btn-success pull-left" ng-click="allRead()">
                                 全部已读
                             </button>
                         </div>
                         <%}%>
-                        <div class="common-list">
+                        <div class="common-list ">
                             <% if(no_read && no_read.length > 0){ %>
                             <% no_read.forEach(function(message,index){%>
                             <% if(message.type == 'at'){%>
@@ -54,32 +53,20 @@
                     </div>
                 </section>
             </div>
+
         </div>
     </div>
     </div>
     <!--//页脚-->
-</div>
+
 </body>
 
-<script>
+<!--<script>
     $(function () {
         $('.tab-menu li').click(function () {
             $('.tab-down section').eq($(this).index()).removeClass('hides').siblings().addClass('hides');
             $('.tab-menu li').eq($(this).index()).addClass('fontactive').siblings().removeClass('fontactive')
             console.log(2)
         })
-     /*   $('.aaaa').click(function () {
-            $('.mes2').removeClass('hides');
-            $('.mes1').addClass('hides');
-            $('.aaaa').addClass('fontactive')
-            $('.bbbb').removeClass('fontactive')
-        })
-        $('.bbbb').click(function () {
-            $('.mes1').removeClass('hides');
-            $('.mes2').addClass('hides');
-            $('.bbbb').addClass('fontactive')
-            $('.aaaa').removeClass('fontactive')
-        })*/
     })
-</script>
-<script src="/plugins/jquery/dist/zichuang.js"></script>
+</script>-->
